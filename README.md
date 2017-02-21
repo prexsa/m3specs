@@ -1,6 +1,6 @@
-# ReduxSimpleStarter
+# M3Specs
 
-Interested in learning [Redux](https://www.udemy.com/react-redux/)?
+A website detailing M3 specifications, from the earliest model, E30, to the most current, F80.
 
 ###Getting Started###
 

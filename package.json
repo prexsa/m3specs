@@ -32,7 +32,9 @@
     "react-dom": "^0.14.3",
     "react-redux": "^4.0.0",
     "react-router": "^2.0.1",
+    "react-slick": "^0.14.6",
     "redux": "^3.0.4",
-    "semantic-ui-react": "^0.65.0"
+    "semantic-ui-react": "^0.65.0",
+    "slick-carousel": "^1.6.0"
   }
 }
