@@ -1,0 +1,17 @@
+.slick-prev, .slick-next {
+  z-index: 50;
+}
+
+.slick-prev {
+  left: 25px;
+}
+
+.slick-next {
+  right: 25px;
+}
+
+.content-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  margin-top: 75px; 
+}
