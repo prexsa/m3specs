@@ -78,22 +78,6 @@ export default class Cards extends Component {
           description = 'E30 was the introduction for the M3 class BMW'
           color='yellow' 
           />
-          <Card 
-          rasied 
-          header = 'E30'
-          href = 'link'
-          meta = 'E30 Specs'
-          description = 'E30 was the introduction for the M3 class BMW'
-          color='red' 
-          />
-          <Card 
-          rasied 
-          header = 'E30'
-          href = 'link'
-          meta = 'E30 Specs'
-          description = 'E30 was the introduction for the M3 class BMW'
-          color='orange' 
-          />
       </Card.Group>
     )
   }

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Menu } from 'semantic-ui-react';
+import { Link } from 'react-router';
 
 export default class Navigation extends Component {
   state = {};
@@ -13,11 +14,13 @@ export default class Navigation extends Component {
       <Menu>
         <Menu.Item header
           name='home'
+          as={Link} to="/"
           active={activeItem === 'home'}
           onClick={this.handleItemClick}>
           M3Specs</Menu.Item>
         <Menu.Item
           name='e30'
+          as={Link} to="/e30"
           active={activeItem === 'e30'}
           onClick={this.handleItemClick}
           >E30</Menu.Item>
