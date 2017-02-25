@@ -17,6 +17,6 @@
 }
 
 .car-details-container {
-  margin: 0 auto;
-  
+  max-width: 1000px;
+  margin: auto 0;
 }
