@@ -18,5 +18,18 @@
 
 .car-details-container {
   max-width: 1000px;
-  margin: auto 0;
+  margin: 0 auto;
+}
+
+.banner-container {
+  position: relative;
+}
+
+.banner {
+  max-width: 210px;
+  border: 1px solid gray;
+  margin: 0 auto;
+  position: absolute;
+  top: 40%;
+  left: 40%;
 }
