@@ -1,15 +1,18 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
-import { Button, Divider, Header, Image, Item, List, Menu } from 'semantic-ui-react';
+import { connect } from 'react-redux';
+import { Button, Divider, Grid, Header, Image, Item, List, Menu } from 'semantic-ui-react';
 
 import Navigation from '../components/Navigation';
 import GearRatio from '../components/GearRatio';
 
-export default class e30 extends Component {
+class e30 extends Component {
   render() {
     var style = {
       opacity: 0.85
     }
+
+    console.log('parts: ', this.props.parts);
 
     return (
       <div className='car-details-container'>
@@ -17,9 +20,11 @@ export default class e30 extends Component {
         <div className='banner-container'>
           <Image  style={style} fluid src="../../assets/e30.jpg" />
           <div className='banner'>
-            <Header as="h1" size='huge' color='grey' textAlign='center'>E30 M3</Header>
-            <Header as="h3" size='large' color='grey' textAlign='center'>Find Local Listings</Header>
-            <Button basic color='green'>Search</Button>
+            <Header as="h1" inverted size='huge' textAlign='center'>E30 M3</Header>
+            <Header as="h3" inverted size='large' textAlign='center'>Find Local Listings</Header>
+            <div className='search-btn-container'>
+              <Button inverted color='black'>Search</Button>            
+            </div>
           </div>
         </div>
 
@@ -30,8 +35,8 @@ export default class e30 extends Component {
             <Button>OverView</Button>
             <Button>Gear Ratio Calculations</Button>
             <Button>Press & Reviews</Button>
-            <Button>For Sale</Button>
-            <Button>Local Meetups</Button>
+            <Button>Kelly Blue Blook Estimated Value</Button>
+            <Button>Listings</Button>
           </Button.Group>
           <Header as='h2' size='large' color='blue' textAlign='center'>OVERVIEW</Header>
           <List>
@@ -68,11 +73,34 @@ export default class e30 extends Component {
               </Item.Content>
             </Item>
           </Item.Group>
-          <Header as='h2' size='large' color='blue' textAlign='center'>For Sale</Header>
-          <Header as='h2' size='large' color='blue' textAlign='center'>Local Meetups</Header>
+          <Header as='h2' size='large' color='blue' textAlign='center'>Kelly Blue Book Estimated Value</Header>
+          <Header as='h2' size='large' color='blue' textAlign='center'>Listings</Header>
+          <Grid>
+            <Grid.Column width={4}>
+              <Image src='http://semantic-ui.com/images/wireframe/image.png' />
+            </Grid.Column>
+            <Grid.Column width={12}>
+              <Image src='http://semantic-ui.com/images/wireframe/paragraph.png' />
+            </Grid.Column>
+            <Grid.Column width={4}>
+              <Image src='http://semantic-ui.com/images/wireframe/image.png' />
+            </Grid.Column>
+            <Grid.Column width={12}>
+              <Image src='http://semantic-ui.com/images/wireframe/paragraph.png' />
+            </Grid.Column>
+          </Grid>
         </div>
 
       </div>
     )
   }
 }
+
+function mapStateToProps(state) {
+  return {
+    parts: state.parts
+  }
+}
+
+
+export default connect(mapStateToProps)(e30);
