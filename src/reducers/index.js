@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import PartsReducer from './reducer_e30';
+import E30Reducer from './reducer_e30';
 
 const rootReducer = combineReducers({
-  parts: PartsReducer
+  e30: E30Reducer
 });
 
 export default rootReducer;
