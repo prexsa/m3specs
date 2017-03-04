@@ -15,9 +15,12 @@ class Navigation extends Component {
 
     this.handleItemClick = (e, { name }) => {
       this.setState({ activeItem: name });
-      this.props.fetchModel(name);
     }
     
+  }
+
+  componentDidMount() {
+    this.props.fetchModel();
   }
 
   render() {

@@ -4,7 +4,7 @@ import { Grid, Header, Image } from 'semantic-ui-react';
 export default class GearRatio extends Component {
   render() {
     return (
-      <div>
+      <div className='margin-top'>
         <Header as='h2' color='blue' textAlign='center'>Gear Ratio</Header>
         <Grid columns={2}>
           <Grid.Row>

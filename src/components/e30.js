@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
 import { connect } from 'react-redux';
-import { Button, Divider, Grid, Header, Image, Item, List, Menu } from 'semantic-ui-react';
+import { Button, Divider, Header, Image, List, Menu } from 'semantic-ui-react';
 
 import Navigation from '../components/Navigation';
 import GearRatio from '../components/GearRatio';
@@ -10,13 +10,19 @@ import PressReviews from '../components/pressreviews';
 import Listings from '../components/listings';
 
 class e30 extends Component {
+  componentDidMount() {
+
+  }
   render() {
     var style = {
       opacity: 0.85
     }
 
-    const modelOverview = this.props.e30[0];
+    var spacing = {
+      marginBottom: '10px'
+    }
 
+    const modelOverview = this.props.e30[0];
     return (
       <div className='car-details-container'>
         <Navigation />
@@ -34,19 +40,52 @@ class e30 extends Component {
         <Divider hidden={true} />
 
         <div>
-          <Button.Group widths='5' basic>
-            <Button>OverView</Button>
-            <Button>Gear Ratio Calculations</Button>
-            <Button>Press & Reviews</Button>
-            <Button>Kelly Blue Blook Estimated Value</Button>
-            <Button>Listings</Button>
-          </Button.Group>
+          <div className='center model-nav'>
+            <List horizontal>
+              <List.Item>
+                <List.Icon name='file text outline' size='big' style={spacing}/>
+                <Header as='h4' color='grey'>OVERVIEW</Header>
+              </List.Item>
+              <List.Item>
+              <List.Icon name='cogs' size='big' style={spacing}/>
+                <Header as='h4' color='grey'>GEAR RATIO CALCULATIONS</Header>
+              </List.Item>
+              <List.Item>
+              <List.Icon name='newspaper' size='big' style={spacing}/>
+                <Header as='h4' color='grey'>PRESS & REVIEWS</Header>
+              </List.Item>
+              <List.Item>
+              <List.Icon name='dollar' size='big' style={spacing} />
+                <Header as='h4' color='grey'>ESTIMATED MARKET VALUE</Header>
+              </List.Item>
+              <List.Item>
+              <List.Icon name='list' size='big' style={spacing}/>
+                <Header as='h4' color='grey'>LISTINGS</Header>
+              </List.Item>
+            </List>
+          </div>
           
           <OverView equipped={modelOverview} />
           <GearRatio />
           <PressReviews />
 
-          <Header as='h2' size='large' color='blue' textAlign='center'>Kelly Blue Book Estimated Value</Header>
+          <Header as='h2' size='large' color='blue' textAlign='center'>Estimated Market Value</Header>
+          <div className='center'>
+            <List horizontal>
+              <List.Item>
+                <Header>Private Party</Header>
+                <List.Content>$70 Mil</List.Content>
+              </List.Item>
+              <List.Item>
+                <Header>Dealer</Header>
+                <List.Content>$70 Mil</List.Content>
+              </List.Item>
+              <List.Item>
+                <Header>Trade In</Header>
+                <List.Content>$70 Mil</List.Content>
+              </List.Item>
+            </List>
+          </div>
           <Listings />
           
         </div>
