@@ -23,6 +23,10 @@ class e30 extends Component {
     }
 
     const modelOverview = this.props.e30[0];
+    // if(!modelOverview) {
+    //   return <div>Loading...</div>;
+    // }
+
     return (
       <div className='car-details-container'>
         <Navigation />
@@ -69,20 +73,20 @@ class e30 extends Component {
           <GearRatio />
           <PressReviews />
 
-          <Header as='h2' size='large' color='blue' textAlign='center'>Estimated Market Value</Header>
+          <Header as='h2' size='huge' color='black' textAlign='center'>Estimated Market Value</Header>
           <div className='center'>
             <List horizontal>
               <List.Item>
-                <Header>Private Party</Header>
-                <List.Content>$70 Mil</List.Content>
+                <Header size='huge' sub>Private Party</Header>
+                <span>$70 Mil</span>
               </List.Item>
               <List.Item>
-                <Header>Dealer</Header>
-                <List.Content>$70 Mil</List.Content>
+                <Header size='huge' sub>Dealer</Header>
+                <span>$70 Mil</span>
               </List.Item>
               <List.Item>
-                <Header>Trade In</Header>
-                <List.Content>$70 Mil</List.Content>
+                <Header size='huge' sub>Trade In</Header>
+                <span>$70 Mil</span>
               </List.Item>
             </List>
           </div>

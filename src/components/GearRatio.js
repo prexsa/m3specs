@@ -5,7 +5,7 @@ export default class GearRatio extends Component {
   render() {
     return (
       <div className='margin-top'>
-        <Header as='h2' color='blue' textAlign='center'>Gear Ratio</Header>
+        <Header as='h1' size='huge' color='black' textAlign='center'>GEAR RATIO</Header>
         <Grid columns={2}>
           <Grid.Row>
             <Grid.Column>

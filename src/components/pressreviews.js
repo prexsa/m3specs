@@ -1,32 +1,45 @@
 import React from 'react';
-import { Header, Image, Item } from 'semantic-ui-react';
+import { Grid, Header, Image, Item } from 'semantic-ui-react';
 
 const PressReviews = (props) => {
   return (
     <div className='margin-top'>
-      <Header as='h2' size='large' color='blue' textAlign='center'>Press & Reviews</Header>
-        <Item.Group>
-          <Item>
-            <Item.Content>
-              <Item.Header as='a'>Header</Item.Header>
-              <Item.Meta>Description</Item.Meta>
-              <Item.Description>
-                <Image src='http://semantic-ui.com/images/wireframe/short-paragraph.png' />
-              </Item.Description>
-              <Item.Extra>Additional Details</Item.Extra>
-            </Item.Content>
-          </Item>
-          <Item>
-            <Item.Content>
-              <Item.Header as='a'>Header</Item.Header>
-              <Item.Meta>Description</Item.Meta>
-              <Item.Description>
-                <Image src='http://semantic-ui.com/images/wireframe/short-paragraph.png' />
-              </Item.Description>
-              <Item.Extra>Additional Details</Item.Extra>
-            </Item.Content>
-          </Item>
-        </Item.Group>
+      <Header as='h1' size='huge' color='black' textAlign='center'>EDITORIALS</Header>
+        <Grid>
+          <Grid.Row>
+            <Grid.Column width={3}>
+              <Header as='h4' color='blue' textAlign='center'>Editorial Reviews</Header>
+            </Grid.Column>
+            <Grid.Column width={13}>
+              <Header as='h4' color='blue'>Title of article</Header>
+              <div>
+                Content about from the article
+              </div>
+            </Grid.Column>
+          </Grid.Row>
+          <Grid.Row>
+            <Grid.Column width={3}>
+              <Header as='h4' color='blue' textAlign='center'>Editorial Reviews</Header>
+            </Grid.Column>
+            <Grid.Column width={13}>
+              <Header as='h4' color='blue'>Title of article</Header>
+              <div>
+                Content about from the article
+              </div>
+            </Grid.Column>
+          </Grid.Row>
+          <Grid.Row>
+            <Grid.Column width={3}>
+              <Header as='h4' color='blue' textAlign='center'>Editorial Reviews</Header>
+            </Grid.Column>
+            <Grid.Column width={13}>
+              <Header as='h4' color='blue'>Title of article</Header>
+              <div>
+                Content about from the article
+              </div>
+            </Grid.Column>
+          </Grid.Row>
+        </Grid>
     </div>
   )
 }

@@ -20,7 +20,7 @@ const Overview = (props) => {
 
   return (
     <div className='margin-top'>
-      <Header as='h2' size='large' color='blue' textAlign='center'>OVERVIEW</Header>
+      <Header as='h1' size='huge' color='black' textAlign='center'>OVERVIEW</Header>
 
         <Grid columns={2} padded='horizontally'>
           <Grid.Row>
