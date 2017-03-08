@@ -1,28 +1,30 @@
 import React from 'react';
 import { Grid, Header, List } from 'semantic-ui-react';
 
+import Caroption from '../components/caroption';
+
 const Overview = (props) => {
 
-  console.log('Overview props: ', props.equipped)
+  console.log('Overview props: ', props.equipment)
 
-  const options = props.equipped;
+  const options = props.equipment;
   if(!options) {
     return <div>Loading...</div>;
   }
 
-  const equipped = props.equipped;
-  const modelName = equipped.name;
-  const cityMPG = equipped.MPG.city;
-  const hwyMPG = equipped.MPG.highway;
-  const horsepower = equipped.engine.horsepower;
-  const horsepowerRPM = equipped.engine.rpm.horsepower;
-  const torque = equipped.engine.torque;
-  const torqueRPM = equipped.engine.rpm.torque;
+  const equipment = props.equipment;
+  const modelName = equipment.name;
+  const cityMPG = equipment.MPG.city;
+  const hwyMPG = equipment.MPG.highway;
+  const horsepower = equipment.engine.horsepower;
+  const horsepowerRPM = equipment.engine.rpm.horsepower;
+  const torque = equipment.engine.torque;
+  const torqueRPM = equipment.engine.rpm.torque;
 
-  const optionsList = (equipped) => {
-    const optionsItem = equipped.options[0].options.map((carOption) => {
+  const optionsList = (equipment) => {
+    const optionsItem = equipment.options[0].options.map((carOption) => {
       console.log('carOption: ', carOption.name)
-      return (<List.Item>carOption.name</List.Item>);
+      return <Caroption car={carOption.name} />;
     })
   }
 
@@ -35,6 +37,7 @@ const Overview = (props) => {
             <Grid.Column>
               <Header as='h4' textAlign='center'>Specs</Header>
               <List size='large'>
+                <List.Item>E46 M3</List.Item>
                 <List.Item>{cityMPG} City / {hwyMPG} HWY</List.Item>
                 <List.Item>{modelName}</List.Item>
                 <List.Item>{horsepower} horsepower @ {horsepowerRPM}</List.Item>
@@ -44,7 +47,7 @@ const Overview = (props) => {
             <Grid.Column>
               <Header as='h4' textAlign='center'>Features and Options</Header>
               <List>
-                {optionsList(equipped)}
+                {optionsList(equipment)}
               </List>
             </Grid.Column>
           </Grid.Row>

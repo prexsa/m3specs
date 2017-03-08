@@ -8,6 +8,7 @@ import GearRatio from '../components/GearRatio';
 import OverView from '../components/overview';
 import PressReviews from '../components/pressreviews';
 import Listings from '../components/listings';
+import MarketValue from '../components/marketvalue';
 
 class e30 extends Component {
   render() {
@@ -20,7 +21,7 @@ class e30 extends Component {
     }
 
     const modelOverview = this.props.e30[0];
-    
+
     return (
       <div className='car-details-container'>
         <Navigation />
@@ -30,7 +31,7 @@ class e30 extends Component {
             <Header as="h1" inverted size='huge' textAlign='center'>E30 M3</Header>
             <Header as="h3" inverted size='large' textAlign='center'>Find Local Listings</Header>
             <div className='search-btn-container'>
-              <Button inverted color='black'>Search</Button>            
+              <Button inverted color='black'>Search</Button>
             </div>
           </div>
         </div>
@@ -62,30 +63,13 @@ class e30 extends Component {
               </List.Item>
             </List>
           </div>
-          
-          <OverView equipped={modelOverview} />
+
+          <OverView equipment={modelOverview} />
           <GearRatio />
           <PressReviews />
-
-          <Header as='h2' size='huge' color='black' textAlign='center'>Estimated Market Value</Header>
-          <div className='center'>
-            <List horizontal>
-              <List.Item>
-                <Header size='huge' sub>Private Party</Header>
-                <span>$70 Mil</span>
-              </List.Item>
-              <List.Item>
-                <Header size='huge' sub>Dealer</Header>
-                <span>$70 Mil</span>
-              </List.Item>
-              <List.Item>
-                <Header size='huge' sub>Trade In</Header>
-                <span>$70 Mil</span>
-              </List.Item>
-            </List>
-          </div>
+          <MarketValue equipment={modelOverview} />
           <Listings />
-          
+
         </div>
 
       </div>
