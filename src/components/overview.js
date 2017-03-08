@@ -6,17 +6,25 @@ const Overview = (props) => {
   console.log('Overview props: ', props.equipped)
 
   const options = props.equipped;
-  console.log('Options: ', options)
+  if(!options) {
+    return <div>Loading...</div>;
+  }
 
   const equipped = props.equipped;
+  const modelName = equipped.name;
+  const cityMPG = equipped.MPG.city;
+  const hwyMPG = equipped.MPG.highway;
+  const horsepower = equipped.engine.horsepower;
+  const horsepowerRPM = equipped.engine.rpm.horsepower;
+  const torque = equipped.engine.torque;
+  const torqueRPM = equipped.engine.rpm.torque;
 
-  // const cityMPG = equipped.MPG.city;
-  // const hwyMPG = equipped.MPG.highway;
-  // const horsepower = equipped.engine.horsepower;
-  // const horsepowerRPM = equipped.rpm.horsepower;
-  // const torqueRPM = equipped.rpm.torque;
-  // const modelName = equipped.name;
-
+  const optionsList = (equipped) => {
+    const optionsItem = equipped.options[0].options.map((carOption) => {
+      console.log('carOption: ', carOption.name)
+      return (<List.Item>carOption.name</List.Item>);
+    })
+  }
 
   return (
     <div className='margin-top'>
@@ -27,21 +35,16 @@ const Overview = (props) => {
             <Grid.Column>
               <Header as='h4' textAlign='center'>Specs</Header>
               <List size='large'>
-                <List.Item>Engine: 2.3L Inline 4</List.Item>
-                <List.Item>Length: 171.1 in</List.Item>
-                <List.Item>Width: 66.1 in</List.Item>
-                <List.Item>Height: 53.9 in</List.Item>
-                <List.Item>Curb Weight: 2,568.4 - 2,998.3 lb</List.Item>
+                <List.Item>{cityMPG} City / {hwyMPG} HWY</List.Item>
+                <List.Item>{modelName}</List.Item>
+                <List.Item>{horsepower} horsepower @ {horsepowerRPM}</List.Item>
+                <List.Item>{torque} lbs of torque @ {torqueRPM}</List.Item>
               </List>
             </Grid.Column>
             <Grid.Column>
               <Header as='h4' textAlign='center'>Features and Options</Header>
               <List>
-                <List.Item>Super cool leather seats</List.Item>
-                <List.Item>Has a sport button that makes it feels faster</List.Item>
-                <List.Item>Big 19" rims</List.Item>
-                <List.Item>Moon roof that gets used once in a while</List.Item>
-                <List.Item>It drives better at higher RPM's</List.Item>
+                {optionsList(equipped)}
               </List>
             </Grid.Column>
           </Grid.Row>

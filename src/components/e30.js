@@ -10,9 +10,6 @@ import PressReviews from '../components/pressreviews';
 import Listings from '../components/listings';
 
 class e30 extends Component {
-  componentDidMount() {
-
-  }
   render() {
     var style = {
       opacity: 0.85
@@ -23,10 +20,7 @@ class e30 extends Component {
     }
 
     const modelOverview = this.props.e30[0];
-    // if(!modelOverview) {
-    //   return <div>Loading...</div>;
-    // }
-
+    
     return (
       <div className='car-details-container'>
         <Navigation />
