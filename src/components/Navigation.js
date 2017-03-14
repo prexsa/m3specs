@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Menu } from 'semantic-ui-react';
 import { Link } from 'react-router';
 import { connect } from 'react-redux';
-import { fetchModel } from '../actions/index';
+import { fetchSpecs, fetchEditorials } from '../actions/index';
 import { bindActionCreators } from 'redux';
 
 class Navigation extends Component {
@@ -20,7 +20,8 @@ class Navigation extends Component {
   }
 
   componentDidMount() {
-    this.props.fetchModel();
+    this.props.fetchSpecs();
+    this.props.fetchEditorials();
   }
 
   render() {
@@ -69,7 +70,10 @@ class Navigation extends Component {
 function mapDispatchToProps(dispatch) {
   // whenever selectModel is called, the result should be passed to all
   // of our reducers
-  return bindActionCreators({ fetchModel: fetchModel }, dispatch);
+  return bindActionCreators({ 
+    fetchSpecs: fetchSpecs,
+    fetchEditorials: fetchEditorials
+     }, dispatch);
 }
 
 export default connect(null, mapDispatchToProps)(Navigation);

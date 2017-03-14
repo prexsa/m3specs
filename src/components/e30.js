@@ -3,12 +3,12 @@ import { Link } from 'react-router';
 import { connect } from 'react-redux';
 import { Button, Divider, Header, Image, List, Menu } from 'semantic-ui-react';
 
-import Navigation from '../components/Navigation';
-import GearRatio from '../components/GearRatio';
-import OverView from '../components/overview';
-import PressReviews from '../components/pressreviews';
-import Listings from '../components/listings';
-import MarketValue from '../components/marketvalue';
+import Navigation from './Navigation';
+import GearRatio from './GearRatio';
+import OverView from './overview';
+import PressReviews from './pressreviews';
+import Listings from './listings';
+import MarketValue from './marketvalue';
 
 class e30 extends Component {
   render() {
@@ -20,7 +20,9 @@ class e30 extends Component {
       marginBottom: '10px'
     }
 
-    const modelOverview = this.props.e30[0];
+    const specs = this.props.specs[0];
+    const editorials = this.props.editorials[0];
+    //console.log('Props: ', specs);
 
     return (
       <div className='car-details-container'>
@@ -42,32 +44,32 @@ class e30 extends Component {
           <div className='center model-nav'>
             <List horizontal>
               <List.Item>
-                <List.Icon name='file text outline' size='big' style={spacing}/>
+                <List.Icon name='file text outline' size='big' style={spacing} color='grey'/>
                 <Header as='h4' color='grey'>OVERVIEW</Header>
               </List.Item>
               <List.Item>
-              <List.Icon name='cogs' size='big' style={spacing}/>
+              <List.Icon name='cogs' size='big' style={spacing} color='grey'/>
                 <Header as='h4' color='grey'>GEAR RATIO CALCULATIONS</Header>
               </List.Item>
               <List.Item>
-              <List.Icon name='newspaper' size='big' style={spacing}/>
+              <List.Icon name='newspaper' size='big' style={spacing} color='grey'/>
                 <Header as='h4' color='grey'>PRESS & REVIEWS</Header>
               </List.Item>
               <List.Item>
-              <List.Icon name='dollar' size='big' style={spacing} />
+              <List.Icon name='dollar' size='big' style={spacing} color='grey'/>
                 <Header as='h4' color='grey'>ESTIMATED MARKET VALUE</Header>
               </List.Item>
               <List.Item>
-              <List.Icon name='list' size='big' style={spacing}/>
+              <List.Icon name='list' size='big' style={spacing} color='grey'/>
                 <Header as='h4' color='grey'>LISTINGS</Header>
               </List.Item>
             </List>
           </div>
 
-          <OverView equipment={modelOverview} />
+          <OverView equipment={specs} />
           <GearRatio />
-          <PressReviews />
-          <MarketValue equipment={modelOverview} />
+          <PressReviews editorials={editorials} />
+          <MarketValue equipment={specs} />
           <Listings />
 
         </div>
@@ -79,7 +81,8 @@ class e30 extends Component {
 
 function mapStateToProps(state) {
   return {
-    e30: state.e30
+    specs: state.specs,
+    editorials: state.editorials
   }
 }
 

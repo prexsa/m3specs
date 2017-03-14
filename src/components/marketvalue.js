@@ -13,7 +13,7 @@ const Marketvalue = (props) => {
 
   return (
     <div>
-      <Header as='h2' size='huge' color='black' textAlign='center'>Estimated Market Value</Header>
+      <Header as='h2' size='huge' color='black' textAlign='center' dividing={true}>Estimated Market Value</Header>
       <div className='center'>
         <List horizontal>
           <List.Item>

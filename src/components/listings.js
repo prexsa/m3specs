@@ -4,7 +4,7 @@ import { Grid, Header, Image, List } from 'semantic-ui-react';
 const Listings = (props) => {
   return (
     <div className='margin-top'>
-      <Header as='h1' size='huge' color='black' textAlign='center'>LISTINGS</Header>
+      <Header as='h1' size='huge' color='black' textAlign='center' dividing={true}>LISTINGS</Header>
         <Grid>
           <Grid.Column width={4}>
             <Image src='http://semantic-ui.com/images/wireframe/image.png' />

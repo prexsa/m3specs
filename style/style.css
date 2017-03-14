@@ -45,6 +45,10 @@ h6 {
   margin-bottom: 2.33em;
 }
 
+a {
+  color: #000;
+}
+
 .slick-prev, .slick-next {
   z-index: 50;
 }
@@ -95,4 +99,14 @@ h6 {
 .model-nav {
   margin-top: 40px;
   margin-bottom: 40px;
+}
+
+.overview-features.ui.card {
+  padding: 17px;
+  font-weight: bold;
+  font-size: 0.83em;
+}
+
+.overview-features.ui.list {
+  line-height: 1.2em;
 }

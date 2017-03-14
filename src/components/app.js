@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { Divider } from 'semantic-ui-react';
 
-import Navigation from '../components/Navigation';
-import Carousel from '../components/carousel';
-import Cards from '../components/Cards';
-import GearRatio from '../components/GearRatio';
+import Navigation from './Navigation';
+import Carousel from './carousel';
+import Cards from './Cards';
+import GearRatio from './GearRatio';
 
 export default class App extends Component {
   render() {

@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux';
-import E30Reducer from './reducer_e30';
+import Specs from './reducer_specs';
+import Editorials from './reducer_editorials';
 
 const rootReducer = combineReducers({
-  e30: E30Reducer
+  specs: Specs,
+  editorials: Editorials
 });
 
 export default rootReducer;
