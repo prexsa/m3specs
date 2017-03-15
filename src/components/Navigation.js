@@ -33,33 +33,41 @@ class Navigation extends Component {
           name='home'
           as={Link} to="/"
           onClick={this.handleItemClick}>
-          M3Specs</Menu.Item>
-        <Menu.Item
-          name='e30'
-          as={Link} to="/e30"
-          active={activeItem === 'e30'}
-          onClick={this.handleItemClick}
-          >E30</Menu.Item>
-        <Menu.Item
-          name='e36'
-          active={activeItem === 'e36'}
-          onClick={this.handleItemClick}
-          >E36</Menu.Item>
-        <Menu.Item
-          name='e46'
-          active={activeItem === 'e46'}
-          onClick={this.handleItemClick}
-          >E46</Menu.Item>
-        <Menu.Item
-          name='e90'
-          active={activeItem === 'e90'}
-          onClick={this.handleItemClick}
-          >E90/92/93</Menu.Item>
-        <Menu.Item
-          name='f80'
-          active={activeItem === 'f80'}
-          onClick={this.handleItemClick}
-          >F80</Menu.Item>
+          M3Specs
+        </Menu.Item>
+        <Menu.Menu position='right'>
+          <Menu.Item
+            name='e30'
+            as={Link} to="/e30"
+            active={activeItem === 'e30'}
+            onClick={this.handleItemClick}
+            >E30
+          </Menu.Item>
+          <Menu.Item
+            name='e36'
+            active={activeItem === 'e36'}
+            onClick={this.handleItemClick}
+            >E36
+          </Menu.Item>
+          <Menu.Item
+            name='e46'
+            active={activeItem === 'e46'}
+            onClick={this.handleItemClick}
+            >E46
+          </Menu.Item>
+          <Menu.Item
+            name='e90'
+            active={activeItem === 'e90'}
+            onClick={this.handleItemClick}
+            >E90/92/93
+          </Menu.Item>
+          <Menu.Item
+            name='f80'
+            active={activeItem === 'f80'}
+            onClick={this.handleItemClick}
+            >F80
+          </Menu.Item>
+        </Menu.Menu>
       </Menu>
     )
   }

@@ -41,27 +41,27 @@ class e30 extends Component {
         <Divider hidden={true} />
 
         <div>
-          <div className='center model-nav'>
+          <div className='center margins'>
             <List horizontal>
               <List.Item>
                 <List.Icon name='file text outline' size='big' style={spacing} color='grey'/>
-                <Header as='h4' color='grey'>OVERVIEW</Header>
+                <Header as='h4' color='grey' size='tiny'>OVERVIEW</Header>
               </List.Item>
               <List.Item>
               <List.Icon name='cogs' size='big' style={spacing} color='grey'/>
-                <Header as='h4' color='grey'>GEAR RATIO CALCULATIONS</Header>
+                <Header as='h4' color='grey' size='tiny'>GEAR RATIO CALCULATIONS</Header>
               </List.Item>
               <List.Item>
               <List.Icon name='newspaper' size='big' style={spacing} color='grey'/>
-                <Header as='h4' color='grey'>PRESS & REVIEWS</Header>
+                <Header as='h4' color='grey' size='tiny'>PRESS & REVIEWS</Header>
               </List.Item>
               <List.Item>
               <List.Icon name='dollar' size='big' style={spacing} color='grey'/>
-                <Header as='h4' color='grey'>ESTIMATED MARKET VALUE</Header>
+                <Header as='h4' color='grey' size='tiny'>ESTIMATED MARKET VALUE</Header>
               </List.Item>
               <List.Item>
               <List.Icon name='list' size='big' style={spacing} color='grey'/>
-                <Header as='h4' color='grey'>LISTINGS</Header>
+                <Header as='h4' color='grey' size='tiny'>LISTINGS</Header>
               </List.Item>
             </List>
           </div>

@@ -24,8 +24,8 @@ const PressReviews = (props) => {
         <Grid.Column width={13}>
           <a href={link} target='_blank'>
             <Header as='h4' color='blue'>{title} ({modelStyle})</Header>
-            <List.Description>Author: {author}</List.Description>
           </a>
+            <List.Description>Author: {author}</List.Description>
           <div>{summary}</div>
         </Grid.Column>
       </Grid.Row>
@@ -33,11 +33,13 @@ const PressReviews = (props) => {
   })
 
   return (
-    <div className='margin-top'>
-      <Header as='h1' size='huge' color='black' textAlign='center' dividing={true}>EDITORIALS</Header>
+    <div className='margins striped-background-color'>
+      <div className='container-width'>
+        <Header className='header-spacing' as='h1' size='huge' color='black' textAlign='center' dividing={true}>EDITORIALS</Header>
         <Grid>
           {articless}
         </Grid>
+      </div>
     </div>
   )
 }

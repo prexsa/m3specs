@@ -1,5 +1,6 @@
 body {
   font-family: "Gotham SSm A", "Gotham SSm B", sans-serif;
+  letter-spacing: 0.0625em;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -49,6 +50,15 @@ a {
   color: #000;
 }
 
+.striped-background-color {
+  background-color: #f2f2f2;
+}
+
+.header-spacing.ui.header {
+  margin-bottom: 2.0em;
+  padding: 2.0em 0;
+}
+
 .slick-prev, .slick-next {
   z-index: 50;
 }
@@ -62,12 +72,15 @@ a {
 }
 
 .content-container {
-  max-width: 1000px;
   margin: 0 auto;
   margin-top: 75px; 
 }
-
+/*
 .car-details-container {
+  margin: 0 auto;
+}
+*/
+.container-width {
   max-width: 1000px;
   margin: 0 auto;
 }
@@ -89,16 +102,31 @@ a {
 }
 
 .margin-top {
-  margin-top: 15px;
+  margin-top: 2em;
 }
 
 .center {
   text-align: center;
 }
 
-.model-nav {
-  margin-top: 40px;
-  margin-bottom: 40px;
+.margins {
+  margin-top: 3.0em;
+  margin-bottom: 3.0em;
+  padding-bottom: 5.0em;
+}
+
+.ui.horizontal.list>.item {
+  margin-left: 1.25em;
+  margin-right: 1.25em;
+}
+
+.overview-specs {
+  line-height: 1.4285;
+}
+
+.overview-specs.ui.list {
+  margin: 1.5em 2.5em;
+  padding-left: 1.25em;
 }
 
 .overview-features.ui.card {
@@ -109,4 +137,11 @@ a {
 
 .overview-features.ui.list {
   line-height: 1.2em;
+}
+
+.currency {
+  margin: 1em 0;
+  padding: 0.5em 0;
+  font-size: 24px;
+  font-weight: bold;
 }

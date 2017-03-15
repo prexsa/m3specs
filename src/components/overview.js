@@ -9,7 +9,7 @@ const Overview = (props) => {
   if(!options) {
     return <div>Loading...</div>;
   }
-  
+
   const equipment = options;
   const modelName = equipment.name;
   const cityMPG = equipment.MPG.city;
@@ -27,14 +27,14 @@ const Overview = (props) => {
   }
 
   return (
-    <div className='margin-top'>
-      <Header as='h1' size='huge' color='black' textAlign='center' dividing={true}>OVERVIEW</Header>
-
+    <div className='margins striped-background-color'>
+      <div className='container-width'>
+        <Header className='header-spacing' as='h1' size='huge' color='black' textAlign='center' dividing={true}>OVERVIEW</Header>
         <Grid columns={2} padded='horizontally'>
           <Grid.Row>
             <Grid.Column>
               <Header as='h4' textAlign='center'>Specs</Header>
-              <List size='large'>
+              <List className='overview-specs' size='large'>
                 <List.Item>E46 M3</List.Item>
                 <List.Item>{cityMPG} City / {hwyMPG} HWY</List.Item>
                 <List.Item>{modelName}</List.Item>
@@ -52,6 +52,7 @@ const Overview = (props) => {
             </Grid.Column>
           </Grid.Row>
         </Grid>
+      </div>
     </div>
   )
 }
