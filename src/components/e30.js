@@ -82,7 +82,8 @@ class e30 extends Component {
 function mapStateToProps(state) {
   return {
     specs: state.specs,
-    editorials: state.editorials
+    editorials: state.editorials,
+    autotrader: state.autotrader
   }
 }
 

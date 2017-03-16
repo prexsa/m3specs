@@ -2,10 +2,6 @@ import React from 'react';
 import { Grid, Header, Image, List } from 'semantic-ui-react';
 
 const Listings = (props) => {
-
-
-
-
   return (
     <div className='margins striped-background-color'>
       <div className='container-width'>

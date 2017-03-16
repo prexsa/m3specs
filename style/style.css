@@ -111,8 +111,8 @@ a {
 
 .margins {
   margin-top: 3.0em;
-  margin-bottom: 3.0em;
-  padding-bottom: 5.0em;
+  margin-bottom: 2.0em;
+  padding-bottom: 2.0em;
 }
 
 .ui.horizontal.list>.item {
