@@ -9,7 +9,7 @@ const PressReviews = (props) => {
 
   const articlesArray = articles.articles;
   let articless = articlesArray.map((article) => {
-    console.log('article: ', article)
+    //console.log('article: ', article)
     const title = article.title;
     const summary = article.summary;
     const link = article.link.href;
