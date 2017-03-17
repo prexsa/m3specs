@@ -1,0 +1,75 @@
+import React from 'react';
+import { Label, Table } from 'semantic-ui-react';
+
+const GearRatioTable = () => {
+
+  // gear ratio calculations
+    let dataSet = [];
+
+    let RPM = 8000;
+    let tireDiameter = 25.496;
+    let finalDriveRatio = 3.62;
+    const coefficient = 336;
+    let gears = [4.23, 2.53, 1.67, 1.23, 1.00, 0.83];
+
+    gears.map((gear) => {
+      const rpmRange = RPM/1000;
+      let startValue = 1;
+
+      const speedArray = [];
+
+      while(startValue <= rpmRange) {
+        const incrementThousand = startValue * 1000;
+        const speed = (incrementThousand * tireDiameter) / (finalDriveRatio * gear * coefficient);
+        const twoDecimalPt = parseFloat(speed).toFixed(2);
+        speedArray.push(twoDecimalPt);
+        startValue++;
+      }
+      return dataSet.push(speedArray)
+    })
+
+    const data = dataSet.map((gearRange, i) => {
+      const numsToLetter = ['First', 'Second', 'Third', 'Fourth', 'Fifth', 'Six'];
+      return (
+          <Table.Row key={i}>
+            <Table.Cell><Label ribbon>{numsToLetter[i]}</Label></Table.Cell>
+            {gearRange.map((gear, j) => {
+                return (
+                  <Table.Cell key={j}  textAlign='center'>{gear}</Table.Cell>
+                )
+            })}
+          </Table.Row>
+      )
+    })
+
+  return (
+    <div>
+      <div>
+        This gear ratio calculation is based on Tire Diameter(25.596), Final Drive Ratio (3.62),
+        coefficient (336), redline RPM (8000), gear ratio [4.23, 2.53, 1.67, 1.23, 1.00, 0.83]
+      </div>
+      <Table celled>
+        <Table.Header>
+          <Table.Row>
+            <Table.HeaderCell textAlign='center'>Gear / RPM</Table.HeaderCell>
+            <Table.HeaderCell textAlign='center'>1000</Table.HeaderCell>
+            <Table.HeaderCell textAlign='center'>2000</Table.HeaderCell>
+            <Table.HeaderCell textAlign='center'>3000</Table.HeaderCell>
+            <Table.HeaderCell textAlign='center'>4000</Table.HeaderCell>
+            <Table.HeaderCell textAlign='center'>5000</Table.HeaderCell>
+            <Table.HeaderCell textAlign='center'>6000</Table.HeaderCell>
+            <Table.HeaderCell textAlign='center'>7000</Table.HeaderCell>
+            <Table.HeaderCell textAlign='center'>8000</Table.HeaderCell>
+          </Table.Row>
+        </Table.Header>
+
+        <Table.Body>
+          {data}
+        </Table.Body>
+      </Table>
+      
+    </div>
+  )
+}
+
+export default GearRatioTable;
