@@ -85,8 +85,9 @@ a {
   margin: 0 auto;
 }
 
-.banner-container {
-  position: relative;
+.banner-container .img {
+  max-height: 500px;
+  border: 1px solid red;
 }
 
 .banner {
@@ -120,13 +121,23 @@ a {
   margin-right: 1.25em;
 }
 
+.overview-positioning {
+  
+}
+
 .overview-specs {
   line-height: 1.4285;
 }
 
-.overview-specs.ui.list {
+.overview-positioning.ui.list {
   margin: 1.5em 2.5em;
-  padding-left: 1.25em;
+  padding: 1.25em;
+}
+
+.overview-fontsize.ui.list {
+  font-size: 0.875em;
+  font-weight: bold;
+  letter-spacing: 0.0685px;
 }
 
 .overview-features.ui.card {

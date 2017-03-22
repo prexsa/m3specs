@@ -34,8 +34,8 @@ const Overview = (props) => {
           <Grid.Row>
             <Grid.Column>
               <Header as='h4' textAlign='center'>Specs</Header>
-              <List className='overview-specs' size='large'>
-                <List.Item>E46 M3</List.Item>
+              <List className='overview-positioning overview-specs' size='large'>
+                <List.Item><Header as='h3'>E46 M3</Header></List.Item>
                 <List.Item>{cityMPG} City / {hwyMPG} HWY</List.Item>
                 <List.Item>{modelName}</List.Item>
                 <List.Item>{horsepower} horsepower @ {horsepowerRPM}</List.Item>
@@ -44,11 +44,9 @@ const Overview = (props) => {
             </Grid.Column>
             <Grid.Column>
               <Header as='h4' textAlign='center'>Features and Options</Header>
-              <Card className='overview-features' centered={true}>
-                <List>
-                  {optionsList(equipment)}
-                </List>
-              </Card>
+              <List className='overview-positioning overview-fontsize'>
+                {optionsList(equipment)}
+              </List>
             </Grid.Column>
           </Grid.Row>
         </Grid>

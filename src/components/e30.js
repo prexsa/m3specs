@@ -12,10 +12,6 @@ import MarketValue from './marketvalue';
 
 class e30 extends Component {
   render() {
-    var style = {
-      opacity: 0.85
-    }
-
     var spacing = {
       marginBottom: '10px'
     }
@@ -28,14 +24,7 @@ class e30 extends Component {
       <div className='car-details-container'>
         <Navigation />
         <div className='banner-container'>
-          <Image  style={style} fluid src="../../assets/e30.jpg" />
-          <div className='banner'>
-            <Header as="h1" inverted size='huge' textAlign='center'>E30 M3</Header>
-            <Header as="h3" inverted size='large' textAlign='center'>Find Local Listings</Header>
-            <div className='search-btn-container'>
-              <Button inverted color='black'>Search</Button>
-            </div>
-          </div>
+          <Image  style={{opacity: 0.85}} fluid src="../../assets/e30.jpg" />
         </div>
 
         <Divider hidden={true} />
