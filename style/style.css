@@ -1,6 +1,7 @@
 body {
-  font-family: "Gotham SSm A", "Gotham SSm B", sans-serif;
-  letter-spacing: 0.0625em;
+  /* font-family: "Gotham SSm A", "Gotham SSm B", sans-serif; */
+  font-family: 'ars-maquette-web', sans-serif;
+  letter-spacing: 0.0525em;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -55,8 +56,18 @@ a {
 }
 
 .header-spacing.ui.header {
-  margin-bottom: 2.0em;
-  padding: 2.0em 0;
+  /* margin-bottom: 2.0em; */
+  padding: 1.0em 0;
+  position: relative;
+}
+
+.header-spacing.ui.header:after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 46%;
+  width: 70px;
+  border-bottom: 2px solid black;
 }
 
 .slick-prev, .slick-next {

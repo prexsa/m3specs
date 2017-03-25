@@ -35,7 +35,7 @@ const PressReviews = (props) => {
   return (
     <div className='margins striped-background-color'>
       <div className='container-width'>
-        <Header className='header-spacing' as='h1' size='huge' color='black' textAlign='center' dividing={true}>EDITORIALS</Header>
+        <Header id='press' className='header-spacing' as='h1' size='huge' color='black' textAlign='center' dividing={true}>EDITORIALS</Header>
         <Grid>
           {articless}
         </Grid>

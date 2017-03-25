@@ -7,7 +7,7 @@ import Navigation from './Navigation';
 import GearRatio from './GearRatio';
 import OverView from './overview';
 import PressReviews from './pressreviews';
-import Listings from './listings';
+import Diy from './diy';
 import MarketValue from './marketvalue';
 
 class e30 extends Component {
@@ -23,9 +23,6 @@ class e30 extends Component {
     return (
       <div className='car-details-container'>
         <Navigation />
-        <div className='banner-container'>
-          <Image  style={{opacity: 0.85}} fluid src="../../assets/e30.jpg" />
-        </div>
 
         <Divider hidden={true} />
 
@@ -33,24 +30,34 @@ class e30 extends Component {
           <div className='center margins'>
             <List horizontal>
               <List.Item>
-                <List.Icon name='file text outline' size='big' style={spacing} color='grey'/>
-                <Header as='h4' color='grey' size='tiny'>OVERVIEW</Header>
+                <a href='#overview'>
+                  <List.Icon name='file text outline' size='big' style={spacing} color='grey'/>
+                  <Header as='h4' color='grey' size='tiny'>OVERVIEW</Header>
+                </a>
               </List.Item>
               <List.Item>
-              <List.Icon name='cogs' size='big' style={spacing} color='grey'/>
-                <Header as='h4' color='grey' size='tiny'>GEAR RATIO CALCULATIONS</Header>
+                <a href='#gear-ratio'>
+                  <List.Icon name='cogs' size='big' style={spacing} color='grey'/>
+                  <Header as='h4' color='grey' size='tiny'>GEAR RATIO CALCULATIONS</Header>
+                </a>
               </List.Item>
               <List.Item>
-              <List.Icon name='newspaper' size='big' style={spacing} color='grey'/>
-                <Header as='h4' color='grey' size='tiny'>PRESS & REVIEWS</Header>
+                <a href='#press'>
+                  <List.Icon name='newspaper' size='big' style={spacing} color='grey'/>
+                  <Header as='h4' color='grey' size='tiny'>PRESS & REVIEWS</Header>
+                </a>
               </List.Item>
               <List.Item>
-              <List.Icon name='dollar' size='big' style={spacing} color='grey'/>
-                <Header as='h4' color='grey' size='tiny'>ESTIMATED MARKET VALUE</Header>
+                <a href='#market-value'>
+                  <List.Icon name='dollar' size='big' style={spacing} color='grey'/>
+                  <Header as='h4' color='grey' size='tiny'>ESTIMATED MARKET VALUE</Header>
+                </a>
               </List.Item>
               <List.Item>
-              <List.Icon name='list' size='big' style={spacing} color='grey'/>
-                <Header as='h4' color='grey' size='tiny'>LISTINGS</Header>
+                <a href='#listings'>
+                  <List.Icon name='list' size='big' style={spacing} style={{'marginBottom': '25px'}} color='grey'/>
+                  <Header as='h4' color='grey' size='tiny'>DIY (DO IT YOURSELF)</Header>
+                </a>
               </List.Item>
             </List>
           </div>
@@ -59,7 +66,7 @@ class e30 extends Component {
           <GearRatio />
           <PressReviews editorials={editorials} />
           <MarketValue equipment={specs} />
-          <Listings />
+          <Diy />
 
         </div>
 

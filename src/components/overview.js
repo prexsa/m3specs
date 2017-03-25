@@ -29,7 +29,7 @@ const Overview = (props) => {
   return (
     <div className='margins striped-background-color'>
       <div className='container-width'>
-        <Header className='header-spacing' as='h1' size='huge' color='black' textAlign='center' dividing={true}>OVERVIEW</Header>
+        <Header id='overview' className='header-spacing' as='h1' size='huge' color='black' textAlign='center' dividing={true}>OVERVIEW</Header>
         <Grid columns={2} padded='horizontally'>
           <Grid.Row>
             <Grid.Column>

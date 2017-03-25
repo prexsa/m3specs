@@ -48,14 +48,14 @@ const GearRatioTable = () => {
         <Table.Header>
           <Table.Row>
             <Table.HeaderCell textAlign='center'>Gear / RPM</Table.HeaderCell>
-            <Table.HeaderCell textAlign='center'>1000</Table.HeaderCell>
-            <Table.HeaderCell textAlign='center'>2000</Table.HeaderCell>
-            <Table.HeaderCell textAlign='center'>3000</Table.HeaderCell>
-            <Table.HeaderCell textAlign='center'>4000</Table.HeaderCell>
-            <Table.HeaderCell textAlign='center'>5000</Table.HeaderCell>
-            <Table.HeaderCell textAlign='center'>6000</Table.HeaderCell>
-            <Table.HeaderCell textAlign='center'>7000</Table.HeaderCell>
-            <Table.HeaderCell textAlign='center'>8000</Table.HeaderCell>
+            <Table.HeaderCell textAlign='center'>1,000</Table.HeaderCell>
+            <Table.HeaderCell textAlign='center'>2,000</Table.HeaderCell>
+            <Table.HeaderCell textAlign='center'>3,000</Table.HeaderCell>
+            <Table.HeaderCell textAlign='center'>4,000</Table.HeaderCell>
+            <Table.HeaderCell textAlign='center'>5,000</Table.HeaderCell>
+            <Table.HeaderCell textAlign='center'>6,000</Table.HeaderCell>
+            <Table.HeaderCell textAlign='center'>7,000</Table.HeaderCell>
+            <Table.HeaderCell textAlign='center'>8,000</Table.HeaderCell>
           </Table.Row>
         </Table.Header>
 
