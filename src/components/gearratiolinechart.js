@@ -3,112 +3,156 @@ import * as d3 from 'd3';
 
 class LineChart extends Component {
   componentDidMount() {
-    // http://bl.ocks.org/d3noob/e99a762017060ce81c76
-    const margin = {top: 30, right: 20, bottom: 70, left: 50},
-      width = 600 - margin.left - margin.right,
-      height = 300 - margin.top - margin.bottom;
-
-    // Parse the date / time
-    //var parseDate = d3.time.format("%b %Y").parse;
-
-    // Set the ranges
-    var x = d3.time.scale().range([0, width]);
-    var y = d3.scale.linear().range([height, 0]);
-
-    // Define the axes
-    var xAxis = d3.svg.axis().scale(x)
-        .orient("bottom").ticks(5);
-
-    var yAxis = d3.svg.axis().scale(y)
-        .orient("left").ticks(5);
-
-    // Define the line
-    var priceline = d3.svg.line() 
-        .x(function(d) { return x(d.date); })
-        .y(function(d) { return y(d.price); });
-        
-    // Adds the svg canvas
-    var svg = d3.select("#chart")
-        .append("svg")
-            .attr("width", width + margin.left + margin.right)
-            .attr("height", height + margin.top + margin.bottom)
-        .append("g")
-            .attr("transform", 
-                  "translate(" + margin.left + "," + margin.top + ")");
-
-    // Get the data
-    d3.csv("stocks.csv", function(error, data) {
-        data.forEach(function(d) {
-        d.date = parseDate(d.date);
-        d.price = +d.price;
-        });
-
-        // Scale the range of the data
-        x.domain(d3.extent(data, function(d) { return d.date; }));
-        y.domain([0, d3.max(data, function(d) { return d.price; })]);
-
-        // Nest the entries by symbol
-        var dataNest = d3.nest()
-            .key(function(d) {return d.symbol;})
-            .entries(data);
-
-        var color = d3.scale.category10();   // set the colour scale
-
-        legendSpace = width/dataNest.length; // spacing for the legend
-
-        // Loop through each symbol / key
-        dataNest.forEach(function(d,i) { 
-
-            svg.append("path")
-                .attr("class", "line")
-                .style("stroke", function() { // Add the colours dynamically
-                    return d.color = color(d.key); })
-                .attr("id", 'tag'+d.key.replace(/\s+/g, '')) // assign ID
-                .attr("d", priceline(d.values));
-
-            // Add the Legend
-            svg.append("text")
-                .attr("x", (legendSpace/2)+i*legendSpace)  // space legend
-                .attr("y", height + (margin.bottom/2)+ 5)
-                .attr("class", "legend")    // style the legend
-                .style("fill", function() { // Add the colours dynamically
-                    return d.color = color(d.key); })
-                .on("click", function(){
-                    // Determine if current line is visible 
-                    var active   = d.active ? false : true,
-                    newOpacity = active ? 0 : 1; 
-                    // Hide or show the elements based on the ID
-                    d3.select("#tag"+d.key.replace(/\s+/g, ''))
-                        .transition().duration(100) 
-                        .style("opacity", newOpacity); 
-                    // Update whether or not the elements are active
-                    d.active = active;
-                    })  
-                .text(d.key); 
-
-        });
-
-        // Add the X Axis
-        svg.append("g")
-            .attr("class", "x axis")
-            .attr("transform", "translate(0," + height + ")")
-            .call(xAxis);
-
-        // Add the Y Axis
-        svg.append("g")
-            .attr("class", "y axis")
-            .call(yAxis);
-
+    var data = [{
+  "Date": "\/Date(1475272800000)\/",
+  "Open": 0,
+  "Closed": 0
+}, {
+  "Date": "\/Date(1475359200000)\/",
+  "Open": 0,
+  "Closed": 0
+}, {
+  "Date": "\/Date(1475445600000)\/",
+  "Open": 0,
+  "Closed": 0
+}, {
+  "Date": "\/Date(1475532000000)\/",
+  "Open": 0,
+  "Closed": 0
+}, {
+  "Date": "\/Date(1475618400000)\/",
+  "Open": 0,
+  "Closed": 0
+}, {
+  "Date": "\/Date(1475704800000)\/",
+  "Open": 0,
+  "Closed": 0
+}, {
+  "Date": "\/Date(1475791200000)\/",
+  "Open": 0,
+  "Closed": 0
+}, {
+  "Date": "\/Date(1475877600000)\/",
+  "Open": 0,
+  "Closed": 0
+}, {
+  "Date": "\/Date(1475964000000)\/",
+  "Open": 0,
+  "Closed": 0
+}, {
+  "Date": "\/Date(1476050400000)\/",
+  "Open": 0,
+  "Closed": 0
+}, {
+  "Date": "\/Date(1476136800000)\/",
+  "Open": 0,
+  "Closed": 0
+}, {
+  "Date": "\/Date(1476223200000)\/",
+  "Open": 0,
+  "Closed": 0
+}, {
+  "Date": "\/Date(1476309600000)\/",
+  "Open": 0,
+  "Closed": 0
+}, {
+  "Date": "\/Date(1476396000000)\/",
+  "Open": 0,
+  "Closed": 0
+}, {
+  "Date": "\/Date(1475445600000)\/",
+  "Open": 1,
+  "Closed": 0
+}, {
+  "Date": "\/Date(1475532000000)\/",
+  "Open": 1,
+  "Closed": 0
+}, {
+  "Date": "\/Date(1475618400000)\/",
+  "Open": 2,
+  "Closed": 0
+}, {
+  "Date": "\/Date(1475791200000)\/",
+  "Open": 9,
+  "Closed": 0
+}, {
+  "Date": "\/Date(1475964000000)\/",
+  "Open": 1,
+  "Closed": 0
+}, {
+  "Date": "\/Date(1475445600000)\/",
+  "Open": 0,
+  "Closed": 1
+}, {
+  "Date": "\/Date(1475532000000)\/",
+  "Open": 0,
+  "Closed": 1
+}, {
+  "Date": "\/Date(1475618400000)\/",
+  "Open": 0,
+  "Closed": 1
+}, {
+  "Date": "\/Date(1475964000000)\/",
+  "Open": 0,
+  "Closed": 1
+}]
+// http://stackoverflow.com/questions/40045219/d3-v4-line-chart-with-json-dates
+// http://www.d3noob.org/2012/12/setting-scales-domains-and-ranges-in.html
+    data.forEach((d) => {
+      var unixToISO = new Date(d.Date.match(/\d+/)[0] * 1);
+      d.Date = unixToISO;
+      d.Open = +d.Open;
+      d.Closed = +d.Closed;
+      //console.log(d.Date);
+      return d;
     });
+    // set dimensions and margins of the graph
+    const margin = {top: 20, right: 20, bottom: 50, left: 70},
+        width = 500 - margin.left - margin.right,
+        height = 375 - margin.top - margin.bottom;
 
+    const x = d3.scaleLinear().range([0, width]);
+    const y = d3.scaleLinear().range([height, 0]);
+
+    x.domain(d3.extent(data, (d) => { return d.Date; }));
+    y.domain([
+        d3.min(data, function (d) { return Math.min(d.Open); }),
+        d3.max(data, function (d) { return Math.max(d.Open); })]);
+
+    const valueline1 = d3.line()
+      .x(function (d) { console.log(x(d.Date)); return x(d.Date); })
+      .y(function (d) { console.log(y(d.Open)); return y(d.Open); });
+
+    const svg = d3.select('#chart')
+        .append('svg')
+            .attr('width', width + margin.left + margin.right)
+            .attr('height', height + margin.top + margin.bottom)
+        .append('g')
+            .attr('transform', "translate(" + margin.left + "," + margin.top + ")");
+
+    // add the x-axis
+    svg.append('g')
+        .attr("class", "x axis")
+        .attr("transform", "translate(0," + height + ")")
+        .call(d3.axisBottom(x));
+
+    // add the y-axis
+    svg.append("g")
+        .attr("class", "y axis")
+        .style("fill", "steelblue")
+        .call(d3.axisLeft(y));
+
+    // add the valueline path.
+    svg.append("path") 
+        .data([data])
+        .attr("class", "line")
+        .attr("d", valueline1);
 
   }
 
   render() {
     return(
-      <div>
-        <svg id='chart'></svg>
-      </div>
+      <div id={'chart'}></div>
     )
   }
 }
